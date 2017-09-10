@@ -29,30 +29,31 @@
 
 	{% endfor %}
 
-	<div class="row">
-	  <div class="col-sm-12">
-	    <div class="thumbnail">
-	      <div class="caption">
-	        <div class="pagination">
-	          <span class="step-links">
-		        {% if obj.has_previous %}
-		            <a href="?page={{ obj.previous_page_number }}">previous</a>
-		        {% endif %}
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="thumbnail">
+        <div class="caption">
+          <div class="pagination">
+            <span class="step-links">
+            {% if obj.has_previous %}
+                <a href="?page={{ obj.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">previous</a>
+            {% endif %}
 
-		        <span class="current">
-		            Page {{ obj.number }} of {{ obj.paginator.num_pages }}.
-		        </span>
-		        {% if obj.has_next %}
-		            <a href="?page={{ obj.next_page_number }}">next</a>
-		        {% endif %}
-			  </span>
-			</div>
-	    </div>
-	  </div>
-	</div>
+            <span class="current">
+                Page {{ obj.number }} of {{ obj.paginator.num_pages }}.
+            </span>
+            {% if obj.has_next %}
+                <a href="?page={{ obj.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">next</a>
+            {% endif %}
+            </span>
+        </div>
+       </div>
+      </div>
+    </div>
 
+  </div>
 
-</div></div>
+</div>
 
 
 {% endblock inherit %}
