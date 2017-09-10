@@ -43,7 +43,7 @@ def corejavadef(request):
 	qs_list=CoreJava.objects.all()
 	query = request.GET.get('q')
 	if query:
-		qs_list = qs_list.filter(Q(cjq__icontains=query) | Q(cja__icontains=query))
+		qs_list = qs_list.filter(Q(cjq__icontains=query) | Q(cja__icontains=query)).distinct()
 
 	paginator = Paginator(qs_list, 5) # Show 25 contacts per page
 
@@ -59,7 +59,7 @@ def corejavadef(request):
 
 	content={'obj':qs,}
 	return render(request, 'corejava.html', content)
-
+	
 
 
 def basicjavadef(request):
@@ -67,7 +67,7 @@ def basicjavadef(request):
 	qs_list=BasicJava.objects.all()
 	query = request.GET.get('q')
 	if query:
-		qs_list = qs_list.filter(Q(bjq__icontains=query) | Q(bja__icontains=query))
+		qs_list = qs_list.filter(Q(bjq__icontains=query) | Q(bja__icontains=query)).distinct()
 
 	paginator = Paginator(qs_list, 5)
 
@@ -91,7 +91,7 @@ def advancedjavadef(request):
 	qs_list=AdvancedJava.objects.all()
 	query = request.GET.get('q')
 	if query:
-		qs_list = qs_list.filter(Q(ajq__icontains=query) | Q(aja__icontains=query))
+		qs_list = qs_list.filter(Q(ajq__icontains=query) | Q(aja__icontains=query)).distinct()
 
 	paginator = Paginator(qs_list, 5) 
 
@@ -114,7 +114,7 @@ def cprogdef(request):
 	qs_list=CProg.objects.all()
 	query = request.GET.get('q')
 	if query:
-		qs_list = qs_list.filter(Q(cpq__icontains=query) | Q(cpa__icontains=query))
+		qs_list = qs_list.filter(Q(cpq__icontains=query) | Q(cpa__icontains=query)).distinct()
 
 	paginator = Paginator(qs_list, 5) 
 
@@ -137,7 +137,7 @@ def datastructuredef(request):
 	qs_list=DataStructure.objects.all()
 	query = request.GET.get('q')
 	if query:
-		qs_list = qs_list.filter(Q(dsq__icontains=query) | Q(dsa__icontains=query))
+		qs_list = qs_list.filter(Q(dsq__icontains=query) | Q(dsa__icontains=query)).distinct()
 
 	paginator = Paginator(qs_list, 5) 
 
@@ -160,7 +160,7 @@ def computernetworkdef(request):
 	qs_list=ComputerNetwork.objects.all()
 	query = request.GET.get('q')
 	if query:
-		qs_list = qs_list.filter(Q(cnq__icontains=query) | Q(cna__icontains=query))
+		qs_list = qs_list.filter(Q(cnq__icontains=query) | Q(cna__icontains=query)).distinct()
 
 	paginator = Paginator(qs_list, 5) 
 
@@ -183,7 +183,7 @@ def dbmsdef(request):
 	qs_list=Dbms.objects.all()
 	query = request.GET.get('q')
 	if query:
-		qs_list = qs_list.filter(Q(dbq__icontains=query) | Q(dba__icontains=query))
+		qs_list = qs_list.filter(Q(dbq__icontains=query) | Q(dba__icontains=query)).distinct()
 
 	paginator = Paginator(qs_list, 5) 
 
@@ -207,7 +207,7 @@ def operatingsystemdef(request):
 	qs_list=OperatingSystem.objects.all()
 	query = request.GET.get('q')
 	if query:
-		qs_list = qs_list.filter(Q(osq__icontains=query) | Q(osa__icontains=query))
+		qs_list = qs_list.filter(Q(osq__icontains=query) | Q(osa__icontains=query)).distinct()
 
 	paginator = Paginator(qs_list, 5) 
 
@@ -230,7 +230,7 @@ def unixdef(request):
 	qs_list=Unix.objects.all()
 	query = request.GET.get('q')
 	if query:
-		qs_list = qs_list.filter(Q(uxq__icontains=query) | Q(uxa__icontains=query))
+		qs_list = qs_list.filter(Q(uxq__icontains=query) | Q(uxa__icontains=query)).distinct()
 
 	paginator = Paginator(qs_list, 5) 
 

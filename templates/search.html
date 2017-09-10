@@ -7,7 +7,7 @@
     <div class='form-group form-group-lg'>
 
       <div class="input-group">
-        <input class='form-control' name="q" type="text" placeholder="Search" />
+        <input class='form-control' name="q" type="text" placeholder="Search" value="{{ request.GET.q }}" />
         <span class='input-group-btn'>
           <input type='submit' value='Search' class='btn btn-primary btn-lg' />
         </span>
